@@ -2,7 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-const BASE_PATH = '/FileSync/'
+// './' = relative paths — works for ANY GitHub repo name
+// No need to change this regardless of your repo name
+const BASE_PATH = './'
 
 export default defineConfig({
   base: BASE_PATH,
@@ -24,13 +26,13 @@ export default defineConfig({
         theme_color: '#020617',
         background_color: '#020617',
         display: 'standalone',
-        start_url: BASE_PATH,
-        scope: BASE_PATH,
+        start_url: './',
+        scope: './',
         icons: [
-          { src: `${BASE_PATH}icons/icon-192.png`, sizes: '192x192', type: 'image/png', purpose: 'any' },
-          { src: `${BASE_PATH}icons/icon-512.png`, sizes: '512x512', type: 'image/png', purpose: 'any' },
-          { src: `${BASE_PATH}icons/icon-maskable-192.png`, sizes: '192x192', type: 'image/png', purpose: 'maskable' },
-          { src: `${BASE_PATH}icons/icon-maskable-512.png`, sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: './icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: './icons/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: './icons/icon-maskable-192.png', sizes: '192x192', type: 'image/png', purpose: 'maskable' },
+          { src: './icons/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       devOptions: { enabled: true },
