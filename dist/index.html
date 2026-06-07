@@ -11,13 +11,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="FileSync" />
     <meta name="msapplication-TileColor" content="#1e40af" />
-    <link rel="icon" type="image/svg+xml" href="/FileSync/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/FileSync/icons/icon-192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/FileSync/icons/icon-512.png" />
-    <link rel="apple-touch-icon" href="/FileSync/icons/icon-maskable-192.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/FileSync/icons/icon-192.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="/FileSync/icons/icon-512.png" />
-    <link rel="manifest" href="/FileSync/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="./icons/icon-512.png" />
+    <link rel="apple-touch-icon" href="./icons/icon-maskable-192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="./icons/icon-512.png" />
+    <link rel="manifest" href="./manifest.json" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,9 +36,9 @@
       .splash-error { margin-top: 20px; color: #f87171; font-size: 13px; display: none; text-align: center; max-width: 300px; line-height: 1.5; }
       .splash-error.show { display: block; }
     </style>
-    <script type="module" crossorigin src="/FileSync/assets/index-DMOAyhKv.js"></script>
-    <link rel="stylesheet" crossorigin href="/FileSync/assets/index-B6kTnrf9.css">
-  <link rel="manifest" href="/FileSync/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/FileSync/registerSW.js"></script></head>
+    <script type="module" crossorigin src="./assets/index-DMOAyhKv.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B6kTnrf9.css">
+  <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <div id="splash">
       <svg class="splash-logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@
       <p class="splash-title">FileSync</p>
       <p class="splash-subtitle">PIN-Based P2P File Transfer</p>
       <div class="splash-loader" id="splash-loader"></div>
-      <p class="splash-error" id="splash-error">⚠️ App failed to load. Run <code>npm install</code> then refresh.</p>
+      <p class="splash-error" id="splash-error">⚠️ App failed to load. Please refresh or run <code>npm install</code>.</p>
     </div>
     <div id="root"></div>
     <script>
@@ -73,8 +73,8 @@
       window.hideSplash = function() {
         if (window.__loaded) return;
         window.__loaded = true;
-        const s = document.getElementById('splash');
-        if (s) { s.classList.add('fade-out'); setTimeout(() => s.classList.add('hidden'), 600); }
+        var s = document.getElementById('splash');
+        if (s) { s.classList.add('fade-out'); setTimeout(function() { s.classList.add('hidden'); }, 600); }
       };
       setTimeout(function() {
         if (!window.__loaded) {
@@ -83,5 +83,5 @@
         }
       }, 8000);
     </script>
-  </body>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a07e77706e3f0769',t:'MTc4MDgyMjgyNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
