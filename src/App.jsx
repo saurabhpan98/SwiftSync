@@ -70,7 +70,7 @@ const PWAInstallBanner = ({ prompt, onInstall, onDismiss }) => {
   return (<div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-sm z-50 animate-slide-up">
     <div className="glass p-4 flex items-center gap-3 shadow-2xl">
       <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center shrink-0"><I.Download className="text-white w-5 h-5" /></div>
-      <div className="flex-1 min-w-0"><p className="text-sm font-semibold">Install FileSync</p><p className="text-xs text-white/50">Add to home screen</p></div>
+      <div className="flex-1 min-w-0"><p className="text-sm font-semibold">Install SwiftSync</p><p className="text-xs text-white/50">Add to home screen</p></div>
       <button onClick={onDismiss} className="p-2 text-white/40"><I.X className="w-4 h-4" /></button>
       <button onClick={onInstall} className="btn-primary text-xs py-2 px-4">Install</button>
     </div>
@@ -363,7 +363,7 @@ export default function App() {
       <div className="relative z-10 max-w-md mx-auto px-4 py-6 w-full flex-1">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-extrabold gradient-text tracking-tight">FileSync</h1>
+          <h1 className="text-3xl font-extrabold gradient-text tracking-tight">SwiftSync</h1>
           <p className="text-white/40 text-sm mt-1">PIN-Based P2P File Transfer</p>
         </div>
 
@@ -388,13 +388,17 @@ export default function App() {
               <p className="text-white/50 text-sm">One device generates a PIN. The other enters it. Files transfer directly — no server, no uploads.</p>
             </div>
 
-            <div className="space-y-3">
-              <button onClick={startSender} className="btn-primary w-full flex items-center justify-center gap-2 text-base py-4">
-                <I.Send /> Send — Generate PIN
-              </button>
-              <button onClick={() => { setStep('receiver'); setRole('receiver'); setInputPin(''); setError(''); }} className="btn-secondary w-full flex items-center justify-center gap-2 text-base py-4">
-                <I.Download /> Receive — Enter PIN
-              </button>
+            <div className="flex flex-col md:flex-row">
+              <div className = "flex-1 m-0 my-1 md:mr-1">
+                <button onClick={startSender} className="btn-primary w-full flex items-center justify-center gap-2 text-base py-4">
+                  <I.Send /> Send — Generate PIN/QR
+                </button>
+              </div>
+              <div className='flex-1 m-0 my-1 md:ml-1'>
+                <button onClick={() => { setStep('receiver'); setRole('receiver'); setInputPin(''); setError(''); }} className="btn-secondary w-full flex items-center justify-center gap-2 text-base py-4">
+                  <I.Download /> Receive — Enter PIN / Scan QR
+                </button>
+              </div>
             </div>
 
             <div className="glass p-6">
@@ -402,17 +406,17 @@ export default function App() {
               <div className="flex items-center gap-2 text-xs text-white/50">
                 <div className="flex-1 text-center">
                   <div className="w-8 h-8 mx-auto mb-1 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center font-bold">1</div>
-                  Generate PIN
+                  Generate PIN / QR
                 </div>
                 <div className="text-white/20">→</div>
                 <div className="flex-1 text-center">
-                  <div className="w-8 h-8 mx-auto mb-1 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center font-bold">2</div>
+                  <div className="w-8 h-8 mx-auto mb-1 bg-yellow-500/20 text-yellow-400 rounded-full flex items-center justify-center font-bold">2</div>
                   Share PIN / QR
                 </div>
                 <div className="text-white/20">→</div>
                 <div className="flex-1 text-center">
                   <div className="w-8 h-8 mx-auto mb-1 bg-green-500/20 text-green-400 rounded-full flex items-center justify-center font-bold">3</div>
-                  Send Files
+                  Exchange Files
                 </div>
               </div>
             </div>
@@ -579,7 +583,7 @@ export default function App() {
             Files transfer directly via WebRTC • End-to-end encrypted
           </p>
           <p className="text-xs text-white/25">
-            &copy; {new Date().getFullYear()} FileSync. Made with <I.Heart className="inline w-3 h-3 text-red-400 mx-0.5" /> by <span className="text-white/40 font-medium">Saurabh Panchal</span>
+            &copy; {new Date().getFullYear()} SwiftSync. Made with <I.Heart className="inline w-3 h-3 text-red-400 mx-0.5" /> by <span className="text-white/40 font-medium">Saurabh Panchal</span>
           </p>
         </div>
       </footer>
